@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">Les p'tites bricoles :D</a>
+    <a class="navbar-brand" href="welcome.php">Les p'tites bricoles :D</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -10,10 +10,20 @@
           <a class="nav-link" href="index.php">Les questions</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="publish-question.php">Publier une question</a>
+          <a class="nav-link" href="publish-question.php">
+            Publier une question
+            <?php 
+              if(!isset($_SESSION['auth'])){
+                echo '<span class="badge bg-warning text-dark">Connectez-vous</span>';
+              }
+            ?>
+          </a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="my-questions.php">Mes questions</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="bricolons-ensemble.php">Bricolons ensemble</a>
         </li>
         <?php 
           if(isset($_SESSION['auth'])){
@@ -22,10 +32,16 @@
               <a class="nav-link" href="profile.php?id=<?= $_SESSION['id']; ?>">Profil</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="bricolons-ensemble.php">Bricolons ensemble</a>
+              <a class="nav-link" href="actions/users/logoutAction.php">Déconnexion</a>
+            </li>
+            <?php
+          } else {
+            ?>
+            <li class="nav-item">
+              <a class="nav-link" href="login.php">Connexion</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="actions/users/logoutAction.php">Déconnexion</a>
+              <a class="nav-link" href="signup.php">Inscription</a>
             </li>
             <?php
           }
