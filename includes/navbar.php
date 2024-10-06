@@ -23,6 +23,10 @@
           <a class="nav-link" href="my-questions.php">Mes questions</a>
         </li>
         <li class="nav-item">
+          <a class="nav-link" href="ChatApp/chat.php">Chat</a>
+        </li>
+
+        <li class="nav-item">
           <a class="nav-link" href="bricolons-ensemble.php">Bricolons ensemble</a>
         </li>
         <?php 
@@ -50,3 +54,33 @@
     </div>
   </div>
 </nav>
+
+<style>
+.nav-link {
+  position: relative;
+  display: inline-block;
+  transition: color 0.3s ease;
+}
+
+.nav-link::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #007bff;
+  visibility: hidden;
+  transform: scaleX(0);
+  transition: all 0.3s ease-in-out;
+}
+
+.nav-link:hover::before {
+  visibility: visible;
+  transform: scaleX(1);
+}
+
+.nav-link:hover {
+  color: #007bff;
+}
+</style>

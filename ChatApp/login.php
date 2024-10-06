@@ -25,7 +25,10 @@
           <input type="submit" name="submit" value="Continue to Chat">
         </div>
       </form>
-      <div class="link">Not yet signed up? <a href="index.php">Signup now</a></div>
+      <div class="link"> Pas encore inscrit? <a href="index.php">Inscrivez-vous</a></div>
+      <div class="message">
+        <p>Nous savons que ce n'est pas l'idéal, mais pour des raisons de sécurité, veuillez vous connecter avec votre compte Gmail.</p>
+      </div>
     </section>
   </div>
   
